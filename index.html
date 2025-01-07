@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Travel Booking</title>
+    <link href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li button {
+            background-color: #005bb5;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav ul li button:hover {
+            background-color: #004a99;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 1.5em;
+            color: #0066cc;
+        }
+
+        section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        section ul li {
+            padding: 5px 0;
+        }
+
+        footer {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            text-align: left;
+            background-color: #f4f4f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e8e8f3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Travel Booking App</h1>
+            <ul>
+                <li><button onclick="window.location.href='reservation.html'">Reservation</button></li>
+                <li><button onclick="window.location.href='itinerary.html'">Itinerary</button></li>
+                <li><button onclick="window.location.href='fare-comparison.html'">Fare Comparison</button></li>
+                <li><button onclick="window.location.href='payment.html'">Payment</button></li>
+                <li><button onclick="window.location.href='assistance.html'">Travel Assistance</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="reservation">
+            <h2>Reservation Workflow</h2>
+            <p>Follow these steps to complete your reservation:</p>
+            <ol>
+                <li><button onclick="window.location">Capture Information</button></li>
+                <li><button onclick="window.location">Process Reservation</button></li>
+                <li><button onclick="window.location">Manage Changes</button></li>
+                <li><button onclick="window.location">Finalise Payment</button></li>
+                <li><button onclick="window.location">Complete Reservation</button></li>
+
+            </ol>
+            <section id="reservation-form">
+                <h2>Make a Reservation</h2>
+                <form id="reservationForm" action="save_reservation.php" method="POST">
+                    <label for="traveler_name">Traveler Name:</label>
+                    <input type="text" id="traveler_name" name="traveler_name" required><br><br>
+            
+                    <label for="departure_date">Departure Date:</label>
+                    <input type="datetime-local" id="departure_date" name="departure_date" required><br><br>
+            
+                    <label for="return_date">Return Date:</label>
+                    <input type="datetime-local" id="return_date" name="return_date" required><br><br>
+            
+                    <label for="urgency">Urgency:</label>
+                    <input type="number" id="urgency" name="urgency" step="0.1" required><br><br>
+            
+                    <label for="work_status">Work Status:</label>
+                    <input type="text" id="work_status" name="work_status"><br><br>
+            
+                    <button type="submit">Submit Reservation</button>
+                </form>
+            </section>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Travel Booking. All rights reserved.</p>
+    </footer>
+</body>
+</html>
